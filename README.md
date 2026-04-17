@@ -1,11 +1,12 @@
-# API_.NET_EXEMPLO
+# GestaoPessoasApi
 
-Este projeto é uma simples API criada utilizando .NET e Entity Framework Core. Ele se conecta a um banco de dados SQL Server.
+API REST em .NET 8 para cadastro, consulta, edição e exclusão de pessoas usando Entity Framework Core e SQL Server.
 
 ## Ferramentas Utilizadas
 
 - [.NET SDK](https://dotnet.microsoft.com/en-us/download)
 - [Entity Framework Core CLI](https://learn.microsoft.com/pt-br/ef/core/cli/dotnet)
+- [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 
 ## Configuração do Ambiente
 
@@ -17,7 +18,7 @@ Este projeto é uma simples API criada utilizando .NET e Entity Framework Core. 
 
 ## String de Conexão
 
-A string de conexão para o SQL Server foi configurada utilizando as informações disponíveis em [ConnectionStrings.com](https://www.connectionstrings.com/sql-server/).
+Configure a string de conexão para SQL Server no arquivo `appsettings.json`:
 
 ```json
 "ConnectionStrings": {
@@ -29,27 +30,37 @@ A string de conexão para o SQL Server foi configurada utilizando as informaçõ
 
 1. Clone este repositório:
     ```bash
-    git clone https://github.com/seu_usuario/API_.NET_EXEMPLO.git
-    ```
+git clone https://github.com/seu_usuario/GestaoPessoasApi.git
+```
 
 2. Navegue até o diretório do projeto:
     ```bash
-    cd API_.NET_EXEMPLO
-    ```
+cd GestaoPessoasApi
+```
 
 3. Restaurar os pacotes:
     ```bash
-    dotnet restore
-    ```
+dotnet restore
+```
 
 4. Atualizar o banco de dados:
-Execute o comando abaixo para aplicar as migrações e atualizar o banco de dados
     ```bash
-    dotnet ef database update
-    ```
+dotnet ef database update
+```
 
 5. Iniciar a aplicação:
-Execute o comando abaixo para aplicar as migrações e atualizar o banco de dados
     ```bash
-    dotnet run
+dotnet run
+```
+
+6. Acesse a documentação Swagger em:
     ```
+https://localhost:7146/swagger
+```
+
+## O que esta API faz
+
+- Cria e gerencia registros de pessoas
+- Oferece endpoints REST para CRUD
+- Usa Entity Framework Core para persistência no SQL Server
+- Inclui suporte a Swagger para testes e documentação
